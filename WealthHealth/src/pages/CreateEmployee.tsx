@@ -1,4 +1,13 @@
-const CreateEmployeeForm = () => {
+import type { Employee } from './Employees';
+import { useState } from 'react';
+
+type PropsType = {
+    setPage: (page: string) => void;
+    setEmployees: (setEmployees: (prev: Array<Employee>) => Array<Employee>) => void;
+};
+
+const CreateEmployeeForm = ({ setPage, setEmployees }: PropsType) => {
+    const [employee, setEmployee] = useState<Employee>({ firstName: '', lastName: '', dateOfBirth: '', startDate: '',  street: '', city: '', zipCode: '' });
 
     return (
         <div className='flex flex-col justify-center items-center'>
@@ -7,7 +16,7 @@ const CreateEmployeeForm = () => {
                     <h1 className='text-3xl font-bold mb-2'>HRnet</h1>
                 </div>
                 <div className='container'>
-                    <a href='#' onClick={() => ('Employees')}>
+                    <a href='#' onClick={() => setPage('Employees')}>
                         <div className='text-blue-700 hover:text-blue-500 font-bold text-center mb-2'>View Current Employees</div>
                     </a>
                     <h2 className='text-xl font-bold mb-2 mt-4 text-center'>Create Employee</h2>
