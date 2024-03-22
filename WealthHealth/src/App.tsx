@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import CreateEmployee from './pages/CreateEmployee';
-import Employees from './pages/Employees';
+import Employees, { Employee } from './pages/Employees';
 import './index.css'
 
 export default () => {

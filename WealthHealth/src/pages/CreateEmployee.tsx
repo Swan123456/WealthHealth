@@ -1,5 +1,6 @@
 import type { Employee } from './Employees';
 import { useState } from 'react';
+import DataInput from '../components/DataInput';
 
 type PropsType = {
     setPage: (page: string) => void;
@@ -22,22 +23,22 @@ const CreateEmployeeForm = ({ setPage, setEmployees }: PropsType) => {
                     <h2 className='text-xl font-bold mb-2 mt-4 text-center'>Create Employee</h2>
                     <form action='#' id='create-employee'>
                         <div className='flex flex-col'>
-                            <input id='first-name' type='text' name='firstName' label='First Name' />
+                            <DataInput id='first-name' type='text' name='firstName' label='First Name' />
                             <br />
-                            <input id='last-name' type='text' name='lastName' label='Last Name' />
+                            <DataInput id='last-name' type='text' name='lastName' label='Last Name' />
                             <br />
-                            <input id='date-of-birth' type='date' name='dateOfBirth' label='Date of Birth' />
+                            <DataInput id='date-of-birth' type='date' name='dateOfBirth' label='Date of Birth' />
                             <br />
-                            <input id='start-date' type='date' name='startDate' label='Start Date' />
+                            <DataInput id='start-date' type='date' name='startDate' label='Start Date' />
                             <br />
                             <fieldset className='address'>
                                 <legend className='font-bold mb-2'>Address</legend>
-                                <input id='street' type='text' name='street' label='Street' />
+                                <DataInput id='street' type='text' name='street' label='Street' />
                                 <br />
-                                <input id='city' type='text' name='city' label='City' />
+                                <DataInput id='city' type='text' name='city' label='City' />
                                 <br />
                                 <br />
-                                <input id='zip-code' type='text' name='zipCode' label='Zip Code' />
+                                <DataInput id='zip-code' type='text' name='zipCode' label='Zip Code' />
                             </fieldset>
                         </div>
                         <div className='flex justify-center'>
