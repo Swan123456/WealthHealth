@@ -6,7 +6,7 @@ import './index.css'
 export default () => {
 	const [employees, setEmployees] = useState<Array<Employee>>([])
 
-  const [page, setPage] = useState<String>('Home')
+  const [page, setPage] = useState('Home')
 
   return <>{page === 'Home' ? <CreateEmployee setPage={setPage} setEmployees={setEmployees} /> : <Employees setPage={setPage} employees={employees} />}</>
 }
