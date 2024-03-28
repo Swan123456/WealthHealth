@@ -35,15 +35,16 @@ export default ({ setPage, employees }: PropsType) => {
     
     return (
 		<>
-			<div>
-                Employee
-                <DataTable data={employees} columns={columns} />
-			</div>
-            <div className='flex justify-center mt-5'>
+			<div id='employee-div' className='m-20 '>
+				<h1 className='text-center text-3xl font-bold mb-5'>Current Employees</h1>
+				{/* //! Affiche les données sur les employés */}
+				<DataTable data={employees} columns={columns} />
+				<div className='flex justify-center mt-5'>
 					<a href='#' onClick={() => setPage('Home')} className='text-blue-500 hover:text-blue-800 font-bold text-center mb-2'>
 						Home
 					</a>{' '}
 					{/* //! Retourne à la page Home */}
+				</div>
 			</div>
 		</>
 	)
