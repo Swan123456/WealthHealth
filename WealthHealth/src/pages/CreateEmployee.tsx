@@ -1,6 +1,9 @@
 import type { Employee } from "./Employees";
 import { useState, ChangeEvent } from "react";
 import DataInput from "../components/DataInput";
+import SelectMenu from "../components/SelectMenu";
+import { stateOptions, departmentOptions } from '../data/data.json';
+import Modal from '../components/Modal';
 
 type PropsType = {
   setPage: (page: string) => void;
@@ -20,10 +23,24 @@ const CreateEmployeeForm = ({ setPage, setEmployees }: PropsType) => {
     zipCode: "",
   });
 
+  const [modalOpened, setModalOpened] = useState<boolean>(false);
+  const [errorModalOpened, setErrorModalOpened] = useState<boolean>(false)
+
   const saveEmployee = (e: any) => {
     e.preventDefault();
-    setEmployees((prev: Array<Employee>) => [...prev, employee]);
-  };
+    if (!Object.values(employee).every((field) => field !== '')) {
+        return setErrorModalOpened(true)
+    }
+    setEmployees((prev: Array<Employee>) => [...prev, employee])
+    setModalOpened(true)
+};
+
+const handleCloseModal = () => {
+    setModalOpened(false)
+    setErrorModalOpened(false)
+    setPage('Employees')
+}
+
 
   const handleInputChange = ({
     target: { name, value },
@@ -33,7 +50,9 @@ const CreateEmployeeForm = ({ setPage, setEmployees }: PropsType) => {
     });
   };
 
-
+  	//! modal params
+	const modalTitle = 'Success !'
+	const modalErrTitle = 'Error !'
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -102,6 +121,14 @@ const CreateEmployeeForm = ({ setPage, setEmployees }: PropsType) => {
                   onChange={handleInputChange}
                 />
                 <br />
+                <SelectMenu
+                  id="state"
+                  name="state"
+                  label="State"
+                  data={stateOptions}
+                  onChange={handleInputChange}
+                />
+                <br />
                 <br />
                 <DataInput
                   id="zip-code"
@@ -111,6 +138,7 @@ const CreateEmployeeForm = ({ setPage, setEmployees }: PropsType) => {
                   onChange={handleInputChange}
                 />
               </fieldset>
+              <SelectMenu id='department' name='department' label='Department' data={departmentOptions} onChange={handleInputChange} />
             </div>
             <div className="flex justify-center">
               <button
@@ -122,6 +150,8 @@ const CreateEmployeeForm = ({ setPage, setEmployees }: PropsType) => {
             </div>
           </form>
         </div>
+        <Modal title={modalTitle} opened={modalOpened} onClose={handleCloseModal} content='Employee Created!' btnText='Close' />
+				<Modal title={modalErrTitle} opened={errorModalOpened} onClose={handleCloseModal} content='Please fill all the fields' btnText='Close' />
       </div>
     </div>
   );
