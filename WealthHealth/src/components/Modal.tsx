@@ -9,7 +9,6 @@
  * @resume Composant Modal basé sur le composant natif <dialog> de HTML5.
  */
 
-//* Importation React
 import { useEffect, useRef } from 'react'
 //? Ajouter le type PropsType
 type PropsType = {

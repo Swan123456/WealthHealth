@@ -1,11 +1,17 @@
-import { useState, useEffect } from 'react';
+/**
+ * Composant principal de l'application.
+ * Gère la logique de l'affichage des pages CreateEmployee et Employees en fonction de l'état de la page.
+ * @returns JSX.Element
+ */
+
+import { useState } from 'react';
 import CreateEmployee from './pages/CreateEmployee';
 import Employees from './pages/Employees';
 import './index.css';
 
 export default () => {
     const [employees, setEmployees] = useState(() => {
-        // Initialise les employés à partir du localStorage ou un tableau vide s'il n'y a pas d'employés enregistrés
+    // État pour stocker les données des employés
         const savedEmployees = localStorage.getItem('employees');
         const parsedEmployees = savedEmployees ? JSON.parse(savedEmployees) : [];
         return parsedEmployees

@@ -1,6 +1,16 @@
+/**
+ * Composant SelectMenu
+ * @param {string} id - Identifiant du champ.
+ * @param {string} name - Nom du champ.
+ * @param {string} label - Étiquette du champ.
+ * @param {Array<string> | Array<{ option: string; value: string }>} data - Données du champ.
+ * @param {(e: ChangeEvent<HTMLSelectElement>) => void} onChange - Fonction à appeler lors du changement de valeur du champ.
+ * @returns {JSX.Element} - Composant React.
+ * @resume Composant React qui affiche un champ de type select et son étiquette.
+ */
+
 import { ChangeEvent } from 'react'
 
-//? Ajouter le type PropsType
 type PropsType = {
 	id: string //! ID utilisé par le component
 	name: string //! Nom utilisé par le component

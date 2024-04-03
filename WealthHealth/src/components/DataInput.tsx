@@ -1,3 +1,14 @@
+/**
+ * Composant DataInput
+ * @param {string} id - Identifiant du champ.
+ * @param {'text' | 'number' | 'date'} type - Type du champ.
+ * @param {string} name - Nom du champ.
+ * @param {string} label - Étiquette du champ.
+ * @param {(e: ChangeEvent<HTMLInputElement>) => void} onChange - Fonction à appeler lors du changement de valeur du champ.
+ * @returns {JSX.Element} - Composant React.
+ * @resume Composant React qui affiche un champ et son étiquette.
+ */
+
 //* Importation react
 import { ChangeEvent } from 'react'
 

@@ -1,3 +1,11 @@
+/**
+ * Compostant DataTable
+ * @param {Object[]} data - Tableau d'objets contenant les données à afficher dans le tableau.
+ * @param {Object[]} columns - Tableau d'objets contenant les colonnes à afficher dans le tableau.
+ * @returns {JSX.Element} - Retourne le composant DataTable.
+ * @resume Composant DataTable permettant d'afficher des données dans un tableau HTML.
+ */
+
 import { ChangeEvent, useEffect, useState } from "react";
 
 export default ({

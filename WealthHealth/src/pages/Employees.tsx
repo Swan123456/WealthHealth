@@ -1,8 +1,16 @@
+/**
+ * Composant pour afficher la liste des employés actuels.
+ * @param {Object} props - Les props du composant.
+ * @param {Function} props.setPage - Fonction pour changer la page.
+ * @returns {JSX.Element} - Le composant des employés.
+ */
+
 import { useEffect, useState } from "react";
 import DataTable from "../components/DataTable";
 
 const Employees = ({ setPage }: { setPage: (page: string) => void }) => {
-    const [cachedEmployees, setCachedEmployees] = useState([]);
+    // État pour stocker les employés récupérés du localStorage
+	const [cachedEmployees, setCachedEmployees] = useState([]);
 
     const columns = [
         { title: "First Name", data: "firstName" },
@@ -16,6 +24,7 @@ const Employees = ({ setPage }: { setPage: (page: string) => void }) => {
         { title: "Zip Code", data: "zipCode" },
     ];
 
+	// Effet pour charger les employés depuis le localStorage au chargement du composant
     useEffect(() => {
         const savedEmployees = localStorage.getItem("employees");
         if (savedEmployees) {

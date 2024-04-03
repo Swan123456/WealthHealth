@@ -1,3 +1,11 @@
+/**
+ * Composant pour créer un nouvel employé.
+ * @param {Object} props - Les props du composant.
+ * @param {Function} props.setPage - Fonction pour changer la page.
+ * @param {Function} props.setEmployees - Fonction pour mettre à jour la liste des employés.
+ * @returns {JSX.Element} - Le formulaire de création d'employé.
+ */
+
 import { useState } from 'react';
 import DataInput from "../components/DataInput";
 import SelectMenu from "../components/SelectMenu";
@@ -5,6 +13,7 @@ import { stateOptions, departmentOptions } from '../data/data.json';
 import Modal from '../components/Modal';
 
 const CreateEmployee = ({ setPage, setEmployees }) => {
+  // État pour stocker les informations de l'employé en cours de création
     const [employee, setEmployee] = useState({
         firstName: "",
         lastName: "",
