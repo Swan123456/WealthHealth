@@ -20,6 +20,17 @@ export default ({
   const [maxPage, setMaxPage] = useState<number>(
     Math.ceil(filteredData.length / showNb)
   );
+  
+  useEffect(() => {
+    setFilteredData(data.filter(item => {
+      return Object.values(item).some(value => {
+        if (typeof value === "string") {
+          return value.includes(search);
+        }
+        return false; 
+      });
+    }));
+  }, [data, search]);
 
   /**
 hook pour effectuer le tri après chaque modification des données
