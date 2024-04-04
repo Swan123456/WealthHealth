@@ -1,20 +1,17 @@
-# HRnet
+# WealthHealth
 
-## Scénario
+WealthHealth is an online application for managing your team. It's Project 14 of the OpenClassrooms "Web App Developer - JavaScript React" course. For this project, I use [React](https://fr.react.dev/) for building the user interface, [TypeScript](https://www.typescriptlang.org/) for static typing, [Tailwind-CSS](https://tailwindcss.com/) for styling, and local state management for application state management.
 
-Vous travaillez pour le département technologique d'une grande société financière, WealthHealth. 
+I had to refactor an [old JQuery site](https://github.com/OpenClassrooms-Student-Center/P12_Front-end) into a modern React app. I independently published this custom Modal component as a [new NPM package](https://www.npmjs.com/package/lib-modal-hrnet), but most of the work is in the [HRnet website main repository](https://github.com/Swan123456/WealthHealth)..
 
-Cette société utilise une application web interne, appelée HRnet, qui gère les dossiers des employés.
+**Useful Links:**
 
-L'application est ancienne et utilise jQuery côté front end, ce qui entraîne des bugs considérables et une augmentation des plaintes en interne.
+-   [Live demo 🌍]()
+-   [HRnet repository 📖](https://github.com/Swan123456/WealthHealth)
+-   [Modal plugin repository 📖](https://github.com/Swan123456/lib-modal)
 
-Votre équipe de développement s'efforce depuis un certain temps déjà de mettre à niveau l'application.
+## Installation
 
-
-## Objectifs
-
-- Convertir l'ensemble du projet HRNet en React. 
-
-- Convertir l'un des quatre plugins jQuery actuels en React. Remplacer les 3 plugins jQuery restants par des composants React que tu coderas toi-même, ou que tu peux importer depuis des libraires existantes si tu manques de temps. 
-
-- Effectuer des tests de performance Lighthouse en comparant l'ancienne et la nouvelle application. 
+1 - Download this project and open the folder.
+2 - Install dependencies with npm install or yarn install.
+3 - Run the project with npm run dev or yarn dev, and open http://localhost:5173/.

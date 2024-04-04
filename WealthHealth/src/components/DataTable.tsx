@@ -10,7 +10,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 
 export default ({
   data,
-  columns,
+  columns, 
 }: {
   data: Array<{ [key: string]: string }>;
   columns: Array<{ title: string; data: string }>;
