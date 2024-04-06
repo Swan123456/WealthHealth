@@ -11,8 +11,14 @@ import DataInput from "../components/DataInput";
 import SelectMenu from "../components/SelectMenu";
 import { stateOptions, departmentOptions } from '../data/data.json';
 import Modal from '../components/Modal';
+import React, { ChangeEvent } from "react";
 
-const CreateEmployee = ({ setPage, setEmployees }) => {
+interface CreateEmployeeProps {
+    setPage: (page: string) => void;
+    setEmployees: (employees: any[]) => void;
+}
+
+const CreateEmployee = ({ setPage, setEmployees }: CreateEmployeeProps) => {
   // État pour stocker les informations de l'employé en cours de création
     const [employee, setEmployee] = useState({
         firstName: "",
@@ -29,7 +35,7 @@ const CreateEmployee = ({ setPage, setEmployees }) => {
     const [modalOpened, setModalOpened] = useState(false);
     const [errorModalOpened, setErrorModalOpened] = useState(false);
 
-    const saveEmployee = (e) => {
+    const saveEmployee = (e: React.FormEvent) => {
         e.preventDefault();
         if (!Object.values(employee).every((field) => field !== '')) {
             return setErrorModalOpened(true);
@@ -49,7 +55,7 @@ const CreateEmployee = ({ setPage, setEmployees }) => {
         setPage('Employees');
     };
 
-    const handleInputChange = ({ target: { name, value } }) => {
+    const handleInputChange = ({ target: { name, value } }: ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
         setEmployee((prev) => {
             return { ...prev, [name]: value };
         });

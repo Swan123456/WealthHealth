@@ -10,7 +10,7 @@ import Employees from "./pages/Employees";
 import "./index.css";
 
 export default () => {
-  const [employees, setEmployees] = useState(() => {
+  const [employees, setEmployees] = useState<any[]>(() => {
     // État pour stocker les données des employés
     const savedEmployees = localStorage.getItem("employees");
     const parsedEmployees = savedEmployees ? JSON.parse(savedEmployees) : [];
@@ -24,7 +24,7 @@ export default () => {
       {page === "Home" ? (
         <CreateEmployee setPage={setPage} setEmployees={setEmployees} />
       ) : (
-        <Employees setPage={setPage} employees={employees} />
+        <Employees setPage={setPage} />
       )}
     </>
   );
