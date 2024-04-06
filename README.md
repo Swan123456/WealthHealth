@@ -6,7 +6,6 @@ I had to refactor an [old JQuery site](https://github.com/OpenClassrooms-Student
 
 **Useful Links:**
 
--   [HRnet repository 📖](https://github.com/Swan123456/WealthHealth)
 -   [Modal plugin repository 📖](https://github.com/Swan123456/lib-modal)
 
 ## Installation
